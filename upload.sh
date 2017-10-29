@@ -10,7 +10,7 @@ configFolder=(gtk-3.0 i3)
 for folderName in "${configFolder[@]}"
 do
     mkdir -p $CONFIG_DIR/.config/$folderName
-    cp -r $HOME/.config/$folderName $CONFIG_DIR
+    cp -r $HOME/.config/$folderName $CONFIG_DIR/.config
 done
 
 git add -A
