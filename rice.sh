@@ -12,7 +12,3 @@ do
 done
 
 cp $CONFIG_DIR/.gtkrc-2.0 $HOME
-
-git add -A
-git commit -m "updated from script"
-git push
