@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_DIR=./configuration
+CONFIG_DIR=/home/gbourant/.dotfiles/configuration
 HOME=/home/gbourant
 
 rm -rf $CONFIG_DIR

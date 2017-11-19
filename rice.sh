@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_DIR=./configuration
+CONFIG_DIR=/home/gbourant/.dotfiles/configuration
 HOME=/home/gbourant
 
 configFolder=(gtk-3.0 i3)
