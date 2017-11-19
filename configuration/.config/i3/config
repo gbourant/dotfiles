@@ -204,3 +204,4 @@ bindsym Print exec gscreenshot-cli -c -f ~/Documents/Screenshots/SC_$(date +%Y%m
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 10 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "roboto 13"
 
 exec --no-startup-id compton -f
+exec setxkbmap  -layout en,el -option grp:alt_shift_toggle

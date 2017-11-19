@@ -13,6 +13,8 @@ do
     cp -r $HOME/.config/$folderName $CONFIG_DIR/.config
 done
 
+cp $HOME/.gtkrc-2.0 $CONFIG_DIR
+
 git add -A
 git commit -m "updated from script"
 git push
