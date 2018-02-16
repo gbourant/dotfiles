@@ -19,3 +19,5 @@ do
     rm -f $HOME/$fileName
     cp $CONFIG_DIR/$fileName $HOME
 done
+
+ cp $CONFIG_DIR/.scripts $HOME
