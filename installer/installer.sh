@@ -114,10 +114,10 @@ bootctl install
 echo "default arch" > /boot/loader/loader.conf
 echo "timeout 4" >> /boot/loader/loader.conf
 
-echo "title Archlinux" > /boot/loader/arch.conf
-echo "linux /vmlinuz-linux" >> /boot/loader/arch.conf
-echo "initrd /initramfs-linux.img" >> /boot/loader/arch.conf
-echo "options root=/dev/sda2 rw" >> /boot/loader/arch.conf
+echo "title Archlinux" > /boot/loader/entries/arch.conf
+echo "linux /vmlinuz-linux" >> /boot/loader/entries/arch.conf
+echo "initrd /initramfs-linux.img" >> /boot/loader/entries/arch.conf
+echo "options root=/dev/sda2 rw" >> /boot/loader/entries/arch.conf
 
 echo "[archlinuxfr]" >> /etc/pacman.conf
 echo "SigLevel = Never" >> /etc/pacman.conf
