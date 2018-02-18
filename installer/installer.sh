@@ -170,7 +170,7 @@ echo "gbourant:pass" | chpasswd
 ##############
 
 #runuser -s /bin/bash -l gbourant -c 'curl -O 192.168.10.9:4242/postInstall.sh'
-
+runuser -s /bin/bash -l gbourant -c 'git clone https://github.com/gbourant/dotfiles.git ~/.dotfiles'
 #grub-install /dev/sda
 #cp /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en
 #grub-mkconfig -o /boot/grub/grub.cfg
