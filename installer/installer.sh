@@ -114,7 +114,7 @@ bootctl install
 echo "default arch" > /boot/loader/loader.conf
 echo "timeout 4" >> /boot/loader/loader.conf
 
-echo "title Archlinux" > /boot/loader/entries/arch.conf
+echo "title Archlinux x64" > /boot/loader/entries/arch.conf
 echo "linux /vmlinuz-linux" >> /boot/loader/entries/arch.conf
 echo "initrd /initramfs-linux.img" >> /boot/loader/entries/arch.conf
 echo "options root=/dev/sda2 rw" >> /boot/loader/entries/arch.conf
@@ -136,7 +136,7 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 #grub os-prober
-pacman -S --noconfirm systemd-swap linux-lts linux-lts-headers
+pacman -S --noconfirm systemd-swap linux-lts linux-lts-headers git
 #pacman -S --noconfirm virtualbox-guest-utils
 
 #intel stuff
@@ -149,7 +149,9 @@ echo "swapfc_enabled=1" >> /etc/systemd/swap.conf.d/systemd-swap.conf
 
 systemctl enable systemd-swap
 #systemctl enable sshd.service
-systemctl enable dhcpcd@enp0s3.service
+#systemctl enable dhcpcd@enp0s3.service
+
+systemctl enable dhcpcd@enp2s0.service
 
 ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime
 hwclock --systohc --utc
@@ -171,6 +173,7 @@ echo "gbourant:pass" | chpasswd
 
 #runuser -s /bin/bash -l gbourant -c 'curl -O 192.168.10.9:4242/postInstall.sh'
 runuser -s /bin/bash -l gbourant -c 'git clone https://github.com/gbourant/dotfiles.git ~/.dotfiles'
+
 #grub-install /dev/sda
 #cp /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en
 #grub-mkconfig -o /boot/grub/grub.cfg
