@@ -70,7 +70,7 @@ change_owner /home/gbourant/.yaourtrc
 #runuser -s /bin/bash -l gbourant -c "gpg --recv-keys 5CC908FDB71E12C2"
 runuser -s /bin/bash -l gbourant -c "yaourt -S --noconfirm google-chrome gscreenshot visual-studio-code-bin skypeforlinux-stable-bin gpicview-gtk3 gitg dbvis"
 runuser -s /bin/bash -l gbourant -c "yaourt -S --noconfirm paper-gtk-theme-git paper-icon-theme-git"
-runuser -s /bin/bash -l gbourant -c "git clone https://github.com/gbourant/dotfiles.git ~/.dotfiles"
+#runuser -s /bin/bash -l gbourant -c "git clone https://github.com/gbourant/dotfiles.git ~/.dotfiles"
 runuser -s /bin/bash -l gbourant -c "~/.dotfiles/rice.sh"
 
 #ttf-roboto-mono rxvt-unicode-patched

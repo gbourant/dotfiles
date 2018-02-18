@@ -16,6 +16,9 @@
 
 #format disks
 
+#gdisk
+#EF00
+
 if [ $1 -eq 1 ]
 then
 
@@ -80,7 +83,9 @@ genfstab -U -p /mnt > /mnt/etc/fstab
 
 
 echo "run state 2 of execute script"
-echo "---------------------curl -O 192.168.10.9:4242/installer.sh"
+#echo "---------------------curl -O 192.168.10.9:4242/installer.sh"
+echo "pacman -S git"
+echo "git clone https://github.com/gbourant/dotfiles.git ~/.dotfiles"
 
 #arch-chroot /mnt curl -O "192.168.10.9:4242/installer.sh";chmod +x installer.sh;./installer.sh 2
 arch-chroot /mnt
