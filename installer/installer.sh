@@ -22,13 +22,13 @@
 if [ $1 -eq 1 ]
 then
 
-mkfs.vfat /dev/sda1
-mkfs.ext4 /dev/sda2
+mkfs.vfat /dev/sdb1
+mkfs.ext4 /dev/sdb2
 
 #mount disks
-mount /dev/sda2 /mnt
+mount /dev/sdb2 /mnt
 mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
+mount /dev/sdb1 /mnt/boot
 
 #enable internet access
 #dhcpcd
