@@ -7,7 +7,7 @@ configFolder=(gtk-3.0 i3)
 
 for folderName in "${configFolder[@]}"
 do
-    rm -rf $HOME/.config/$folderName
+    sudo rm -rf $HOME/.config/$folderName
     mkdir -p $HOME/.config/$folderName
     cp -r  $CONFIG_DIR/.config/$folderName $HOME/.config
 done
@@ -16,9 +16,9 @@ configFiles=(.gtkrc-2.0 .zshrc .wallpaper.png)
 
 for fileName in "${configFiles[@]}"
 do
-    rm -f $HOME/$fileName
+    sudo rm -f $HOME/$fileName
     cp $CONFIG_DIR/$fileName $HOME
 done
 
-rm -rf $HOME/.scripts
+sudo rm -rf $HOME/.scripts
 cp -r $CONFIG_DIR/.scripts $HOME
