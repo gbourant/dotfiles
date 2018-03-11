@@ -10,7 +10,7 @@ function change_owner {
 
 
 
-pacman -S --needed --noconfirm git feh perl-anyevent-i3
+pacman -S --needed --noconfirm git feh perl-anyevent-i3 numlockx
 pacman -S --needed --noconfirm udisks2 gvfs
 pacman -S --needed --noconfirm rxvt-unicode i3 dmenu xorg \
                       xorg-xinit  rofi lxappearance arandr \
@@ -67,8 +67,8 @@ echo "EDITFILES=0" >> /home/gbourant/.yaourtrc
 change_owner /home/gbourant/.yaourtrc
 #jdownloader2
 #libcurl-openssl-1.0
-#runuser -s /bin/bash -l gbourant -c "gpg --recv-keys 5CC908FDB71E12C2"
-runuser -s /bin/bash -l gbourant -c "yaourt -S --noconfirm google-chrome gscreenshot visual-studio-code-bin skypeforlinux-stable-bin gpicview-gtk3 gitg dbvis"
+#gitg
+runuser -s /bin/bash -l gbourant -c "yaourt -S --noconfirm google-chrome gscreenshot visual-studio-code-bin skypeforlinux-stable-bin gpicview-gtk3 git-cola"
 runuser -s /bin/bash -l gbourant -c "yaourt -S --noconfirm paper-gtk-theme-git paper-icon-theme-git"
 #runuser -s /bin/bash -l gbourant -c "git clone https://github.com/gbourant/dotfiles.git ~/.dotfiles"
 runuser -s /bin/bash -l gbourant -c "~/.dotfiles/rice.sh"

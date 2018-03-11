@@ -20,4 +20,5 @@ do
     cp $CONFIG_DIR/$fileName $HOME
 done
 
- cp -r $CONFIG_DIR/.scripts $HOME
+rm -rf $HOME/.scripts
+cp -r $CONFIG_DIR/.scripts $HOME
