@@ -59,6 +59,9 @@ runuser -s /bin/bash -l gbourant -c 'git config --global user.email "gbourant@gm
 runuser -s /bin/bash -l gbourant -c 'git config --global user.name "gbourant"'
 
 runuser -s /bin/bash -l gbourant -c 'mkdir -p ~/Documents/Screenshots'
+runuser -s /bin/bash -l gbourant -c "git config --global credential.helper 'cache --timeout=3600'"
+
+
 
 
 echo "NOCONFIRM=1" > /home/gbourant/.yaourtrc

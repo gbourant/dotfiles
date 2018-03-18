@@ -138,11 +138,34 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'Close all windows or exit?' -b 'Close all windows' 'i3-msg [class="^(!?.*i3bar).*$"] kill' -b 'Exit i3' 'i3-msg exit'
+#bindsym $mod+Shift+e [class=".*"] kill
+
+set $Locker exec /home/gbourant/.scripts/lock/lock.sh
+bindsym $mod+Shift+x $Locker 
+# set $Locker i3lock && sleep 1
 
 
-bindsym $mod+Shift+x exec /home/gbourant/.scripts/lock/lock.sh
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+   #bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym r exec --no-startup-id i3-msg [class=".*"] kill && sleep 2 && systemctl reboot, mode "default", mode "default"  
+
+    #bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id i3-msg [class=".*"] kill && sleep 2 && systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+e mode "$mode_system"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
