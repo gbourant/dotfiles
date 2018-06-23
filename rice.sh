@@ -12,7 +12,7 @@ do
     cp -r  $CONFIG_DIR/.config/$folderName $HOME/.config
 done
 
-configFiles=(.gtkrc-2.0 .zshrc .wallpaper.png)
+configFiles=(.gtkrc-2.0 .zshrc .wallpaper.png .Xresources)
 
 for fileName in "${configFiles[@]}"
 do
