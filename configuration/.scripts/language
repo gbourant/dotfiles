@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LANG=`xset -q | grep -A 0 'LED' | cut -c59-67`
+
+if [ "$LANG" = "00001002" ] || [ "$LANG" = "00001003" ]; then
+    echo "GR"
+else
+    echo "EN"
+fi
