@@ -1,0 +1,13 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "editor.formatOnSave": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.rendererType": "dom",
+    "terminal.integrated.fontFamily": "Roboto Mono for Powerline",
+    "window.zoomLevel": 1,
+    "workbench.statusBar.feedback.visible": false,
+    "git.enableSmartCommit": true,
+    "editor.minimap.enabled": true,
+    "window.titleBarStyle": "native"
+}
