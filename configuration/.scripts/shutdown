@@ -1,0 +1,3 @@
+i3-msg [class=".*"] kill
+sleep 5 
+systemctl poweroff -i
